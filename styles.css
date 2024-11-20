@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.car {
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    bottom: 30px;
+    animation: drive 3s forwards;
+}
+
+.car::before, .car::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.car::before {
+    width: 30px;
+    height: 30px;
+    left: 20px;
+    bottom: -15px;
+}
+
+.car::after {
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    bottom: -15px;
+}
+
+@keyframes drive {
+    from {
+        left: -200px;
+    }
+    to {
+        left: calc(100vw - 250px);
+    }
+}
